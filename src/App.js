@@ -1,5 +1,6 @@
 import MovieList from "./components/MovieList";
 import MovieSearchBar from "./components/MovieSearchBar";
+import NominatedList from "./components/NominatedList";
 import { MovieProvider } from "./store/MoviesStore";
 
 function App() {
@@ -7,7 +8,10 @@ function App() {
     <MovieProvider>
       <div>
         <MovieSearchBar />
-        <MovieList/>
+        <div className="flex">
+          <MovieList />
+          <NominatedList />
+        </div>
       </div>
     </MovieProvider>
   );

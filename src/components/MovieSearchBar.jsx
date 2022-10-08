@@ -3,7 +3,7 @@ import { MovieStore } from "../store/MoviesStore";
 
 const MovieSearchBar = () => {
     const [title, setTitle] = useState('')
-  const { movies, setMovies } = useContext(MovieStore);
+  const { setMovies } = useContext(MovieStore);
 
  
 
@@ -12,12 +12,11 @@ const MovieSearchBar = () => {
         const response = await fetch(`http://www.omdbapi.com/?s=${title}&apikey=9b0bfa13`)
         const data = await response.json()
         setMovies(data)
+        console.log(data)
         setTitle('')
         
          }
          
-
-  console.log(movies)
   
 
   return (

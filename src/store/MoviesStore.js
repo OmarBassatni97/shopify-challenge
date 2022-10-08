@@ -4,7 +4,7 @@ const MovieStore = createContext();
 
 const MovieProvider = ({ children }) => {
   const [movies, setMovies] = useState();
-  const [nominatedMovies, setNominatedMovies] = useState()
+  const [nominatedMovies, setNominatedMovies] = useState([])
   return (
     <MovieStore.Provider value={{ movies, setMovies, nominatedMovies, setNominatedMovies }}>{children}</MovieStore.Provider>
   );
