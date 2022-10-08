@@ -1,9 +1,15 @@
+import MovieList from "./components/MovieList";
+import MovieSearchBar from "./components/MovieSearchBar";
+import { MovieProvider } from "./store/MoviesStore";
 
 function App() {
   return (
-    <div className="App">
-     <h1 className="">Hello</h1>
-    </div>
+    <MovieProvider>
+      <div>
+        <MovieSearchBar />
+        <MovieList/>
+      </div>
+    </MovieProvider>
   );
 }
 
