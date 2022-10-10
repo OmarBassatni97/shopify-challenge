@@ -9,7 +9,7 @@ const MovieSearchBar = () => {
 
   const fetchData = async (e, title) => {
     e.preventDefault()
-    const response = await fetch(`http://www.omdbapi.com/?s=${title}&apikey=9b0bfa13`)
+    const response = await fetch(`https://www.omdbapi.com/?s=${title}&apikey=9b0bfa13`)
     const data = await response.json()
     setMovies(data)
     console.log(data)
