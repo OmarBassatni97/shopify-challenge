@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
         <MovieSearchBar />
-        <div className="flex">
+        <div className="md:flex">
           <MovieList />
           <NominatedList />
         </div>

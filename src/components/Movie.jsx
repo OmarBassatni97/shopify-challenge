@@ -4,7 +4,7 @@ const Movie = ({title, releaseData, img, addMovie}) => {
   const {nominatedMovies} = useContext(MovieStore)
   const nominatedMoviesLimit = nominatedMovies.length === 5 ? true : false
   return (
-    <div className='flex mb-10'>
+    <div className='lg:flex mb-10'>
         <img className='h-[250px]' src={img} alt={img} />
         <div className='m-3 font-bold'>
         <p>{title}</p>

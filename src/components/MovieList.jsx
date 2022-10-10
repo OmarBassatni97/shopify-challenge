@@ -16,7 +16,7 @@ const MovieList = () => {
     e.target.disabled = true
   };
   return (
-    <div className="bg-white m-10 p-5 rounded w-[50%]">
+    <div className="bg-white m-10 p-5 rounded  md:w-[50%]">
       <h1 className="font-bold text-[25px] mb-3">Results:</h1>
       {movies &&
         movies.Search.slice(0, 3).map((movie) => {
