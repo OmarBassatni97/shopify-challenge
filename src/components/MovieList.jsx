@@ -5,7 +5,7 @@ import Movie from "./Movie";
 const MovieList = () => {
   const { movies, setNominatedMovies } = useContext(MovieStore);
 
-  const addMovie = (movie) => {
+  const addMovie = (e,movie) => {
     const addedMovie = {
       imdBID: movie.imdbID,
       Title: movie.Title,
@@ -13,6 +13,7 @@ const MovieList = () => {
       Poster: movie.Poster,
     };
     setNominatedMovies(prev => [...prev,addedMovie])
+    e.target.disabled = true
   };
   return (
     <div className="bg-white m-10 p-5 rounded w-[50%]">
@@ -25,7 +26,7 @@ const MovieList = () => {
               title={movie.Title}
               releaseData={movie.Year}
               img={movie.Poster}
-              addMovie={() => addMovie(movie)}
+              addMovie={(e) => addMovie(e,movie)}
             />
           );
         })}

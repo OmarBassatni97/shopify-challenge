@@ -1,18 +1,15 @@
-import MovieList from "./components/MovieList";
-import MovieSearchBar from "./components/MovieSearchBar";
-import NominatedList from "./components/NominatedList";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import ChooseMoviePage from './pages/ChooseMoviePage'
 import { MovieProvider } from "./store/MoviesStore";
 
 function App() {
   return (
     <MovieProvider>
-      <div>
-        <MovieSearchBar />
-        <div className="flex">
-          <MovieList />
-          <NominatedList />
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/choose-movie" element={<ChooseMoviePage/>}/>
+      </Routes>
     </MovieProvider>
   );
 }
