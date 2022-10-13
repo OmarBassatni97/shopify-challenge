@@ -7,12 +7,15 @@ const Home = () => {
   const [showButton, setShowButton] = useState()
 
   useEffect(() => {
-    if (window.scrollY > 300) {
-      setShowButton(true)
-    }
-    else {
-      setShowButton(false)
-    }
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        setShowButton(true)
+      }
+      else {
+        setShowButton(false)
+      }
+    })
+
   }, [])
   const goUp = () => {
     window.scrollTo({
