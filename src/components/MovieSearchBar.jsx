@@ -5,11 +5,11 @@ const MovieSearchBar = () => {
   const [title, setTitle] = useState('')
   const { setMovies, setError } = useContext(MovieStore);
 
-
+const API_KEY = process.env.REACT_APP_API_KEY
 
   const fetchData = async (e, title) => {
     e.preventDefault()
-    const response = await fetch(`https://www.omdbapi.com/?s=${title}&apikey=9b0bfa13`)
+    const response = await fetch(`https://www.omdbapi.com/?s=${title}&apikey=${API_KEY}`)
     const data = await response.json()
     setMovies(data)
     setError(data.Error)
